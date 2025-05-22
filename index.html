@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="VTCYAN - Service de transport avec chauffeur à Montpellier, Millau et Rodez. Réservation en ligne.">
+  <meta name="keywords" content="VTC, transport, chauffeur, Montpellier, Millau, Rodez">
+  <meta name="author" content="devbyasj">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha384-k6RqeWeci5ZR/Lv4MR0sA0FfDOM8d7j3z5l5e5c5e5e5e5e5e5e5e5e5e5e5e5" crossorigin="anonymous">
+  <title>Document</title>
+</head>
+<body>
+  <header>
+    <div class="brand">
+      <a href="/" class="logo">
+        <img src="images/logo.svg" alt="Logo de VTCYAN" />
+      </a>
+    </div>
+  
+    <nav id="navigation">
+      <button class="hamburger" aria-label="Menu">
+        <div></div>
+        <div></div>
+        <div></div>
+      </button>
+  
+      <ul class="nav-links">
+        <li><a href="#services">Services</a></li>
+        <li><a href="#contact">Contact</a></li>
+        <li><a href="tel:0698272323" title="Appeler le chauffeur">📞</a></li>
+      </ul>
+    </nav>
+  </header>
+<main>
+    <section class="hero">
+        <div class="hero-content">
+            <img src="images/fourgonOr.png" alt="Fourgon VTC" class="hero-van" />
+            <div class="hero-text">
+            <h1>Transport 9 places et possibilité de remorque</h1>
+            <p>Disponible de 19h à 8h • Rapatriement • Groupes • Autoroute • Sortie boîtes de nuit</p>
+            <p>Zone d'intervention Montpellier • Millau • Rodez </p>
+            </div>
+        </div>
+    </section>
+
+<section class="services" id="services">
+  <div class="services-layout">
+
+    <div class="cta">
+    <div class="chauffeur-photo">
+        <img src="images/chauffeur.jpg" alt="Votre chauffeur VTC" />
+    </div>
+
+    <a href="tel:0698272323" class="btn-reserver">Réserver maintenant</a>
+    </div>
+
+
+    <div class="table-wrapper">
+      <table>
+        <thead>
+          <tr>
+            <th>Service</th>
+            <th>Description</th>
+            <th>Tarif</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Trajets nocturnes</td>
+            <td>Boîtes de nuit (19h–8h)</td>
+            <td>Sur demande</td>
+          </tr>
+          <tr>
+            <td>Rapatriement autoroute</td>
+            <td>Passagers et bagages</td>
+            <td>2€/km</td>
+          </tr>
+          <tr>
+            <td>Mise à disposition</td>
+            <td>Attente du chauffeur sur place</td>
+            <td>60€/h</td>
+          </tr>
+          <tr>
+            <td>Montpellier ⇄ Millau</td>
+            <td>Aller-retour</td>
+            <td>400€</td>
+          </tr>
+          <tr>
+            <td>Transport de groupe</td>
+            <td>Travailleurs Rodez, trajets collectifs</td>
+            <td>Même tarif</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+<section id="contact" class="contact-card">
+  <div class="contact-wrapper">
+      <h2>Contact</h2>
+      <p><strong>Nom :</strong>Yannick</p>
+      <p><strong>Téléphone :</strong> <a href="tel:0698272323">06 98 27 23 23</a></p>
+      <p><strong>Zone :</strong> Montpellier – Millau – Rodez</p>
+      <p><strong>Disponibilité :</strong> 19h à 8h</p>
+  </div>
+</section>
+
+</main>
+<footer>
+  <div class="footer-content">
+    <div class="brand">
+    <a href="/" class="logo">
+      <img src="images/logo.svg" alt="Logo de VTCYAN" />
+    </a>
+    </div>
+    <div>
+        <h4>Service de transport avec chauffeur</h6>
+        <p>&copy; devbyasj – Tous droits réservés</p>
+    </div>
+
+  </div>
+</footer>
+
+<script src="script.js">
+  document.addEventListener('DOMContentLoaded', () => {
+  const van = document.querySelector('.hero-van');
+  if (van) {
+    van.classList.add('animate');
+  }
+
+  const hamburger = document.querySelector('.hamburger');
+    const navLinks = document.querySelector('.nav-links');
+
+    hamburger.addEventListener('click', (e) => {
+      e.stopPropagation();
+      hamburger.classList.toggle('open');
+      navLinks.classList.toggle('open');
+    });
+
+    // Fermer le menu si on clique en dehors
+    document.addEventListener('click', (e) => {
+      if (!navLinks.contains(e.target) && !hamburger.contains(e.target)) {
+        hamburger.classList.remove('open');
+        navLinks.classList.remove('open');
+      }
+    });
+  });
+</script>
+</body>
+</html>

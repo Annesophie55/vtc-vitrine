@@ -1,0 +1,454 @@
+h1,
+h2,
+h3,
+h4 {
+  margin: 0;
+}
+
+*, ::after, ::before {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: var(--font-primary);
+  font-size: 16px;
+  line-height: 1.5;
+  color: var(--gray-dark);
+  margin: 0;
+  background-color: var(--white);
+  overflow-x: hidden;
+}
+
+ul{
+  list-style: none;
+  padding-left: 0;
+  margin: 0;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+  cursor: pointer;
+}
+
+img{
+  max-width: 100%;
+}
+
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+figcaption {
+  font-size: 0.8em;
+  color: var(--gray-dark);
+  text-align: left;
+  margin-left: 7px;
+}
+
+.section-title {
+  text-align: center;
+  width: 100%;
+  margin-bottom: 30px;
+  background: rgb(12, 173, 161);
+  background: linear-gradient(212deg, rgba(12, 173, 161, 1) 30%, rgba(12, 148, 138, 0.9831168356906163) 48%, rgba(14, 124, 139, 1) 78%);
+  font-family: var(--font-secondary);
+  color: var(--white);
+  padding: 45px;
+}
+
+p{
+  font-family: var(--font-primary);
+}
+
+.credits {
+  opacity: 0.5;
+  font-size: 0.5rem;
+}
+
+
+:root {
+  /* Couleurs principales */
+  --black: #0E0E0E;
+  --black-soft: #1A1A1A;
+  --gold: #FFD700;
+  --gold-dark: #C7A400;
+  --white: #FFFFFF;
+
+  /* Couleurs neutres */
+  --gray-light: #DADADA;
+  --gray-medium: #999999;
+  --gray-dark: #444444;
+
+  /* Couleurs secondaires utiles */
+  --alert: #E63946; /* Rouge discret si besoin */
+  --success: #4CAF50; /* Pour validation (réservations) */
+
+  /* Couleurs avec opacité */
+  --black-opacity-10: rgba(0, 0, 0, 0.1);
+  --black-opacity-20: rgba(0, 0, 0, 0.2);
+
+  /* Polices */
+  --font-primary: 'Lato', sans-serif;
+  --font-secondary: 'Playfair Display', serif;
+  --font-accent: 'Dancing Script', cursive;
+}
+
+
+footer {
+  background-color: black;
+  color: #ffd700;
+  padding: 1rem;
+  text-align: center;
+  font-family: var(--font-primary, 'Lato', sans-serif);
+  border-top: 2px solid #c5a947;
+}
+
+footer .footer-content {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+footer .footer-content p {
+  font-size: 0.9rem;
+  margin: 0.3rem 0;
+  line-height: 1.4;
+}
+
+footer .footer-content h4 {
+  font-size: 1.2rem;
+  margin: 0.5rem 0;
+}
+
+.brand .logo img {
+  width: 250px;
+  height: auto;
+}
+
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: black;
+  padding: 0.5rem 1rem;
+  position: relative;
+  z-index: 100;
+  flex-wrap: wrap;
+  border-bottom: 2px solid #c5a947;
+}
+
+header .brand .logo img {
+  width: 150px;
+  height: auto;
+}
+
+header nav {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  position: relative;
+}
+
+header nav .nav-links {
+  display: flex;
+  gap: 2rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+header nav .nav-links a {
+  color: gold;
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.3s;
+}
+
+header nav .nav-links a:hover {
+  color: goldenrod;
+}
+
+header nav .hamburger {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 40px;
+  height: 40px;
+  padding: 8px;
+  background: linear-gradient(135deg, #b08d57 0%, #ffd700 50%, #c5a947 100%);
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+  z-index: 1100;
+}
+
+header nav .hamburger div {
+  width: 25px;
+  height: 3px;
+  background-color: white;
+  transition: all 0.3s;
+}
+
+header nav .hamburger div:nth-child(2) {
+  margin: 5px 0;
+}
+
+header nav .hamburger.open div:nth-child(1) {
+  transform: rotate(45deg) translate(5px, 5px);
+}
+
+header nav .hamburger.open div:nth-child(2) {
+  opacity: 0;
+}
+
+header nav .hamburger.open div:nth-child(3) {
+  transform: rotate(-45deg) translate(5px, -6px);
+}
+
+header .header-call a {
+  font-size: 1.2rem;
+  color: white;
+}
+
+header .header-call a:hover {
+  color: #ffd700;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  header nav {
+    width: 100%;
+    justify-content: space-between;
+  }
+
+  header nav .hamburger {
+    display: flex;
+    position: absolute;
+    top: 0.5rem;
+    right: 1rem;
+  }
+
+  header nav .nav-links {
+    flex-direction: column;
+    align-items: flex-end;
+    background-color: black;
+    padding: 1rem;
+    border-left: 2px solid #ffd700;
+    border-bottom: 2px solid #ffd700;
+    position: absolute;
+    top: 60px;
+    right: 0;
+    width: 100%;
+    display: none;
+    transform: translateX(100%);
+    transition: transform 0.3s ease-in-out;
+  }
+
+  header nav .nav-links.open {
+    display: flex;
+    transform: translateX(0);
+  }
+}
+
+.hero {
+  background-color: black;
+  color: #ffd700;
+  height: 70vh;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.hero .hero-content {
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+.hero .hero-van {
+  width: 60%;
+  animation: drive-in 2s ease-out forwards;
+  opacity: 0;
+  position: relative;
+  left: -100vw;
+}
+
+.hero .hero-text {
+  max-width: 40%;
+}
+
+.hero .hero-text h1 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.hero .hero-text p {
+  font-size: 1.2rem;
+  font-style: italic;
+}
+
+@keyframes drive-in {
+  to {
+    left: 0;
+    opacity: 1;
+  }
+}
+
+.services {
+  background-color: #0a0a0a;
+  color: #ffd700;
+  padding: 4rem 2rem;
+}
+
+.services .services-layout {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 2rem;
+}
+
+@media (max-width: 768px) {
+  .services .services-layout {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+.services .cta {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.services .cta .chauffeur-photo {
+  margin-bottom: 2rem;
+  width: 220px;
+  height: 220px;
+  border-radius: 100% 0% 100% 0% / 30% 65% 35% 70%;
+  border: 6px solid transparent;
+  background-image: linear-gradient(black, black), linear-gradient(135deg, #b08d57, #ffd700, #c5a947);
+  background-origin: border-box;
+  background-clip: content-box, border-box;
+  overflow: hidden;
+  animation: smooth-in 1s cubic-bezier(0.68, -0.55, 0.265, 1.55) forwards;
+}
+
+.services .cta .chauffeur-photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.services .cta .btn-reserver {
+  display: inline-block;
+  background: linear-gradient(135deg, #b08d57 0%, #ffd700 50%, #c5a947 100%);
+  color: black;
+  font-weight: bold;
+  padding: 1.5rem 2.5rem;
+  border-radius: 10px;
+  text-decoration: none;
+  font-size: 1.5rem;
+  text-align: center;
+  transition: background 0.3s ease;
+}
+
+.services .cta .btn-reserver:hover {
+  background: linear-gradient(135deg, #ffd700 0%, #b08d57 100%);
+}
+
+@keyframes smooth-in {
+  from {
+    transform: scale(0.7);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.services .table-wrapper {
+  flex: 2;
+  overflow-x: auto;
+}
+
+.services .table-wrapper table {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: #111;
+  border: 1px solid #c5a947;
+}
+
+.services .table-wrapper table th,
+.services .table-wrapper table td {
+  padding: 1rem;
+  border: 1px solid #c5a947;
+  text-align: left;
+}
+
+.services .table-wrapper table th {
+  background-color: #1e1e1e;
+  font-weight: bold;
+}
+
+.services .table-wrapper table tr:hover {
+  background-color: #222;
+}
+
+
+.contact-card {
+  background-color: #0a0a0a;
+  height: fit-content;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.contact-wrapper {
+  margin: 2rem;
+  color: #ffd700;
+  padding: 1rem;
+  border: 2px solid #c5a947;
+  text-align: center;
+  width: 30%;
+border-radius: 15px;
+}
+
+.contact-card h2 {
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+  color: #ffd700;
+}
+
+.contact-card p {
+  font-size: 1.1rem;
+  margin: 0.5rem 0;
+}
+
+.contact-card a {
+  color: #ffd700;
+  text-decoration: underline;
+  transition: color 0.3s ease;
+}
+
+.contact-card a:hover {
+  color: goldenrod;
+}
